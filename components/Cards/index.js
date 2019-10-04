@@ -63,7 +63,7 @@ function cardCreator(article){
     imgContainer.classList.add('img-container');
 
     headline.textContent = article.headline;
-    imgContainer.src = article.authorPhoto;
+    img.src = article.authorPhoto;
     authorName.textContent = `By ${article.authorName}`
 
     imgContainer.appendChild(img);

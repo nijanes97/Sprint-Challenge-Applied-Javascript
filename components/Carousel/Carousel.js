@@ -17,3 +17,39 @@
     <div class="right-button"> > </div>
   </div>
 */
+const carouselImgs = [];
+// C:\Users\nickj\Desktop\Lambda School\Sprint-V\Sprint-Challenge-Applied-Javascript\components\Carousel
+// C:\Users\nickj\Desktop\Lambda School\Sprint-V\Sprint-Challenge-Applied-Javascript\assets\carousel
+//assets\carousel\computer.jpeg
+carouselImgs.push("./assets/carousel/computer.jpeg");
+carouselImgs.push("./assets/carousel/mountains.jpeg");
+carouselImgs.push("./assets/carousel/trees.jpeg");
+carouselImgs.push("./assets/carousel/turntable.jpeg");
+
+const carouselContainer = document.querySelector('.carousel-container');
+console.log(carouselContainer);
+
+carouselContainer.appendChild(carouselCreator(carouselImgs));
+
+
+
+function carouselCreator(imgs) {
+  const carousel = document.createElement('div');
+  const leftbtn = document.createElement('div');
+  const rightbtn = document.createElement('div');
+
+  carousel.classList.add('carousel');
+  leftbtn.classList.add('left-button');
+  rightbtn.classList.add('right-button');
+
+  carousel.appendChild(leftbtn);
+  imgs.forEach(img =>{
+    const tempImg = document.createElement('img');
+    tempImg.src = img;
+    carousel.appendChild(tempImg);
+  })
+  carousel.appendChild(rightbtn);
+  console.log(carousel);
+
+  return carousel;
+}

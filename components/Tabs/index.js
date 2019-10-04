@@ -12,6 +12,10 @@ axios
     .get("https://lambda-times-backend.herokuapp.com/topics")
     .then(response => {
         console.log(response);
+        const defaultTopic = document.createElement('div');
+        defaultTopic.textContent = 'All';
+        defaultTopic.classList.add('tab');
+        topicsPoint.appendChild(defaultTopic)
         response.data.topics.forEach(item => {
             const newTopic = document.createElement('div');
             newTopic.textContent = item;
